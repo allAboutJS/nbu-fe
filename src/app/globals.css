@@ -1,0 +1,18 @@
+@layer theme, base, mui, components, utilities;
+@import "tailwindcss";
+@import "@fontsource/source-sans-pro";
+
+* {
+	font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+}
+
+.bg-grid-pattern {
+	background-image: radial-gradient(circle at 1px 1px, black 1px, transparent 0);
+	background-size: 20px 20px;
+}
+
+body,
+html {
+	width: 100%;
+	overflow-x: hidden;
+}
