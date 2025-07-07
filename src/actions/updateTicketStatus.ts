@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
 import type { TicketStatus } from "../../types";
 
@@ -19,6 +20,8 @@ const updateTicketStatus = async (id: string, status: TicketStatus) => {
 		);
 
 		if (!res.ok) return false;
+
+		revalidatePath("/dashboard", "layout");
 		return true;
 	} catch (e) {
 		console.log(e);

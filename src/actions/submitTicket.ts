@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import type { CreateTicketDto } from "../../types";
 
 const submitTicket = async (form: CreateTicketDto) => {
@@ -12,6 +13,7 @@ const submitTicket = async (form: CreateTicketDto) => {
 			},
 		});
 
+		revalidatePath("/dashboard", "layout");
 		return true;
 	} catch {
 		return false;

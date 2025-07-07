@@ -47,7 +47,7 @@ export default function Dashboard() {
 	return (
 		<div className="space-y-10">
 			<title>Admin Dashboard</title>
-		
+
 			<h1 className="text-4xl font-bold">
 				Welcome Back{" "}
 				<span className="bg-gradient-to-r from-blue-800 via-blue-700 to-teal-600 bg-clip-text text-transparent">
@@ -131,7 +131,9 @@ export default function Dashboard() {
 							>
 								{statusConfig[ticket.status as keyof typeof statusConfig].label}
 							</div>
-							<h2 className="text-lg font-semibold">{ticket.title}</h2>
+							<h2 className="text-lg font-semibold capitalize">
+								{ticket.title}
+							</h2>
 							<p className="text-zinc-500">{ticket.description}</p>
 
 							<div className="mt-6 flex justify-between flex-wrap gap-y-3">
@@ -166,23 +168,18 @@ export default function Dashboard() {
 																if (setTickets)
 																	setTickets((prev) => {
 																		if (prev) {
-																			const changedTicket = prev.find(
+																			const changedTicketIndx = prev.findIndex(
 																				(t) => t.id === ticket.id,
 																			);
-																			const otherTickets = prev.filter(
-																				(t) => t.id !== ticket.id,
-																			);
-																			if (changedTicket)
-																				changedTicket.status = target.value;
 
-																			otherTickets.push(
-																				changedTicket as Ticket,
-																			);
-																			return otherTickets.sort(
-																				(a, b) =>
-																					new Date(a.created_at).getTime() -
-																					new Date(b.created_at).getTime(),
-																			);
+																			if (changedTicketIndx > -1) {
+																				prev[changedTicketIndx].status =
+																					target.value;
+																				prev[changedTicketIndx].updated_at =
+																					new Date().toUTCString();
+																			}
+
+																			return [...prev];
 																		}
 
 																		return prev;
