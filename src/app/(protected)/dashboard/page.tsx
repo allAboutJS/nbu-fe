@@ -131,7 +131,7 @@ export default function Dashboard() {
 							<h2 className="text-lg font-semibold">{ticket.title}</h2>
 							<p className="text-zinc-500">{ticket.description}</p>
 
-							<div className="mt-6 flex justify-between">
+							<div className="mt-6 flex justify-between flex-wrap gap-y-3">
 								<div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
 									<div className="flex items-center">
 										<Tag className="w-4 h-4 mr-1" />
