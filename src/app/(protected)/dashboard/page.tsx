@@ -96,6 +96,7 @@ export default function Dashboard() {
 							disabled={!tickets?.length}
 							value={query}
 							onChange={({ target }) => setQuery(target.value)}
+							type="search"
 						/>
 						<FormControl disabled={!tickets?.length}>
 							<InputLabel id="category-label">Category</InputLabel>

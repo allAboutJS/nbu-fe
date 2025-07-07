@@ -90,6 +90,7 @@ export default function CreateTicket() {
 							placeholder="A brief description of the problem"
 							value={form.password}
 							required
+							type='password'
 							onChange={({ target }) =>
 								setForm((prev) => ({ ...prev, password: target.value }))
 							}
