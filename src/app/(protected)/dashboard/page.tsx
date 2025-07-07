@@ -46,6 +46,8 @@ export default function Dashboard() {
 
 	return (
 		<div className="space-y-10">
+			<title>Admin Dashboard</title>
+		
 			<h1 className="text-4xl font-bold">
 				Welcome Back{" "}
 				<span className="bg-gradient-to-r from-blue-800 via-blue-700 to-teal-600 bg-clip-text text-transparent">

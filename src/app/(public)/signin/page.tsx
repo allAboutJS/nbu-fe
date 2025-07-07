@@ -25,7 +25,7 @@ export default function CreateTicket() {
 
 	return (
 		<>
-			<title>Create New Ticket</title>
+			<title>Admin Sign In</title>
 
 			<div className="bg-gradient-to-b from-slate-50/50 to-cyan-50/50 px-4 sm:px-6 lg:px-8 py-12 space-y-12">
 				<div className="max-w-7xl mx-auto">
@@ -70,7 +70,6 @@ export default function CreateTicket() {
 							label="Email"
 							variant="outlined"
 							name="email"
-							placeholder="A brief description of the problem"
 							value={form.email}
 							required
 							onChange={({ target }) =>
@@ -87,7 +86,6 @@ export default function CreateTicket() {
 							label="Password"
 							variant="outlined"
 							name="password"
-							placeholder="A brief description of the problem"
 							value={form.password}
 							required
 							type='password'
